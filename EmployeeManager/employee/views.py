@@ -23,7 +23,7 @@ class ListEmployee(generics.ListAPIView):
     pagination_class = CustomPagination
 
     def get_queryset(self):
-        return EmployeeModel.objects.all()
+        return EmployeeModel.objects.all().order_by("-registration_date")
 
 
 class DeleteEmployee(generics.DestroyAPIView):
