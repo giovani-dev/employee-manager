@@ -1,2 +1,2 @@
 
-web: gunicorn --chdir ./StockControl StockControl.wsgi --workers 2
+web: gunicorn --chdir ./EmployeeManager EmployeeManager.wsgi --workers 2
