@@ -1,0 +1,18 @@
+version: '3.7'
+services: 
+    employee_db:
+        image: mysql:5.7
+        restart: always
+        environment: 
+            MYSQL_ROOT_PASSWORD: 123456
+            MYSQL_DATABASE: EmployeeManager
+        ports: 
+            - 3306:3306
+    employee_api:
+        build:
+            context: ../
+            dockerfile: ./docker/Dockerfile
+        ports:
+            - "8000:8000"
+        depends_on:
+            - employee_db
