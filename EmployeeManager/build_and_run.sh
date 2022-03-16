@@ -2,4 +2,5 @@
 python EmployeeManager/manage.py makemigrations
 python EmployeeManager/manage.py makemigrations employee
 python EmployeeManager/manage.py migrate
+python EmployeeManager/manage.py test
 (cd EmployeeManager; gunicorn EmployeeManager.wsgi --user www-data --bind 0.0.0.0:8000 --workers 2)
